@@ -56,7 +56,7 @@ int login(int n)
         {
             if(strcmp(temPass, profiles.password) == 0)
             {
-                printf("You have successfully logged in.");
+                printf("You have successfully logged in."); sleep(1);
                 return 5;
             }else
             {

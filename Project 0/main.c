@@ -3,6 +3,7 @@
 #include <dos.h>
 #include "SplashScreen.h"
 #include "Login.h"
+#include "Menu.h"
 #define SIZE 50
 
 int main(void)
@@ -22,14 +23,19 @@ int main(void)
     {
         option = login(1);
     }
+
     if(option == 2)
     {
         while(option == 2)
         {
             option = login(2);
+            system("cls");
+            if(option == 2) option = login(1);
             if(option == 3) break;
+            menu();
         }
     }
+
     if(option == 3)
     {
         system("cls"); sleep(1);
