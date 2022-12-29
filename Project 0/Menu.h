@@ -32,13 +32,15 @@ void googlePlay(void)
     int i, k, l, choice;
     char code[100], line[100];
     FILE *inI;
-    inI = fopen("googleplay_i.txt", "a+");
+    inI = fopen("googleplay_i.txt", "r");
     fscanf(inI, "%d", &i);
+    FILE *outI;
+    outI = fopen("googleplay_i.txt", "w");
     FILE *inK;
-    inK = fopen("googleplay_k.txt", "a+");
+    inK = fopen("googleplay_k.txt", "r");
     fscanf(inK, "%d", &k);
     FILE *outK;
-    outK = fopen("googleplay_k.txt", "w"); fclose(inK);
+    outK = fopen("googleplay_k.txt", "w");
 
     printf("%20c Serial %10c Value %10c Price(BDT) %10c In-stock\n", ' ', ' ', ' ', ' ');
     printf("%22c 1. %13c $5 %14c 545 %18c %d\n", ' ', ' ',  ' ', ' ', i);
@@ -48,7 +50,7 @@ void googlePlay(void)
     {
         l = 0;
         FILE *play5;
-        play5 = fopen("play5.txt", "r");
+        play5 = fopen("play5.txt", "r+");
         fgets(line, 85, play5);
         for(k; k>= 0; ++k)
         {
@@ -60,11 +62,11 @@ void googlePlay(void)
             }
             ++l;
         }
-        fprintf(inK, "%d", k);
+        fprintf(outK, "%d", k);
         --i;
-        fprintf(inI, "%d", i);
-        fclose(inI); fclose(inK);
+        fprintf(outI, "%d", i);
+        fclose(inI); fclose(inK); fclose(outI); fclose(outK);
         printf("Here is your code> %s", code);
-        printf("\n\nPress any key to continue."); getch();
+        printf("\n\nPress any key to continue."); getch(); system("cls");
     }
 }

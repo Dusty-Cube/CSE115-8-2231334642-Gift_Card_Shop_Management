@@ -69,7 +69,7 @@ int login(int n)
         {
             printf("There's no account under phone number: %s\nTry again.\n", temPhone);
             sleep(2);
-            return 2;
+            return 8;
         }
     }
 }

@@ -31,6 +31,7 @@ int main(void)
             option = login(2);
             system("cls");
             if(option == 2) option = login(1);
+            if(option == 8) option = login(2);
             if(option == 3) break;
             menu();
         }
