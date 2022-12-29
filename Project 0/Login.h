@@ -60,16 +60,15 @@ int login(int n)
                 return 5;
             }else
             {
-                printf("Invalid password.\n-> Press 1 to try again.\n-> Press 0 to exit.\n"); sleep(3);
-                scanf("%d", &exit);
-                if(exit == 0) return 3;
-                else return 2;
+                printf("\n\nInvalid password. Please try again.\n"); sleep(2); system("cls");
+                return 0;
             }
         }else
         {
-            printf("There's no account under phone number: %s\nTry again.\n", temPhone);
+            printf("\n\n!!!!!!     There's no account under phone number: %s     !!!!!!\nPlease register an account.\n", temPhone);
+            printf("\nPress any key to continue> "); getch(); system("cls");
             sleep(2);
-            return 8;
+            return 1;
         }
     }
 }
