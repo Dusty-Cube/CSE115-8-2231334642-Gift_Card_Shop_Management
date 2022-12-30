@@ -3,7 +3,7 @@
 #include <dos.h>
 #include <windows.h>
 #include <MMsystem.h>
-//#include "SplashScreen.h"
+#include "SplashScreen.h"
 #include "Login.h"
 #include "Menu.h"
 
@@ -11,16 +11,16 @@ int main(void)
 {
     PlaySound(TEXT("song.wav"), NULL, SND_LOOP | SND_ASYNC);
     int option, check, trigger, i, choice = 1;
-    //splash();
+    splash();
     printf("\n\n\n\n\n\n");
     printf("%20c# HELLO, USER\n", ' '); sleep(1);
-    printf("%20c# WELCOME TO NASIM'S GIFT CARD SHOP\n", ' '); sleep(2); system("cls");
+    printf("%20c# WELCOME TO NASIM'S GIFT CARD SHOP\n", ' '); sleep(2);
     printf("\n\n\n\n\n\n");
     printf("%20c# WHAT WOULD YOU LIKE TO DO> ", ' '); sleep(1);
-    printf("\n\n%20c  1. Create an Account", ' ');
-    printf("\n%20c  2. Login", ' ');
-    printf("\n%20c  3. Exit", ' ');
-    printf("\n\n%20c  >> ", ' '); scanf("%d", &option);
+    printf("\n\n%20c1. Create an Account", ' ');
+    printf("\n%20c2. Login", ' ');
+    printf("\n%20c3. Exit", ' ');
+    printf("\n\n%20c>> ", ' '); scanf("%d", &option);
     if(option == 1)
     {
         trigger = login(1);
@@ -48,6 +48,7 @@ int main(void)
                     }
                     else if(choice != 1)
                     {
+                        printf("\n\n");
                         printf("%20c# ", ' '); system("pause");
                         system("cls"); sleep(1);
                         printf("\n\n\n\n\n\n");
@@ -73,6 +74,7 @@ int main(void)
                 }
                 else if(choice != 1)
                 {
+                    printf("\n\n");
                     printf("%20c# ", ' '); system("pause");
                     system("cls"); sleep(1);
                     printf("\n\n\n\n\n\n");
@@ -118,6 +120,7 @@ int main(void)
                     }
                     else if(choice != 1)
                     {
+                        printf("\n\n");
                         printf("%20c# ", ' '); system("pause");
                         system("cls"); sleep(1);
                         printf("\n\n\n\n\n\n");
@@ -153,6 +156,7 @@ int main(void)
                 }
                 else if(choice != 1)
                 {
+                    printf("\n\n");
                     printf("%20c# ", ' '); system("pause");
                     system("cls"); sleep(1);
                     printf("\n\n\n\n\n\n");
@@ -167,6 +171,7 @@ int main(void)
     }
     else if(trigger != 1 || trigger != 2)
     {
+        printf("\n\n");
         printf("%20c# ", ' '); system("pause");
         system("cls"); sleep(1);
         printf("\n\n\n\n\n\n");

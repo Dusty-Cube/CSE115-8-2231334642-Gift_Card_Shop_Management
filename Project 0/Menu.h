@@ -11,12 +11,12 @@ void menu(void)
     printf("%40c**********************************\n", ' ');
     printf("\n\n\n\n\n\n");
     printf("%20c# SELECT THE CARD YOU WANNA PURCHASE> \n\n\n", ' ');
-    printf("\n%20c  1. Google Play", ' ');
-    printf("\n%20c  2. Amazon", ' ');
-    printf("\n%20c  3. Apple Gift Card", ' ');
-    printf("\n%20c  4. PlayStation", ' ');
-    printf("\n%20c  PRESS 0 TO EXIT", ' ');
-    printf("\n\n%20c  >> ", ' '); scanf("%d", &choice);
+    printf("\n%20c1. Google Play", ' ');
+    printf("\n%20c2. Amazon", ' ');
+    printf("\n%20c3. Apple Gift Card", ' ');
+    printf("\n%20c4. PlayStation", ' ');
+    printf("\n\n%20cPRESS 0 TO EXIT", ' ');
+    printf("\n\n%20c>> ", ' '); scanf("%d", &choice);
 
     switch(choice)
     {
@@ -33,7 +33,10 @@ void menu(void)
             }else if(trigger == 3)
             {
                 menu(); break;
-            }else if(trigger == 0) break;
+            }else if(trigger == 0)
+            {
+                menu(); break;
+            }
         }
     case 2:
         {
@@ -48,7 +51,10 @@ void menu(void)
             }else if(trigger == 3)
             {
                 menu(); break;
-            }else if(trigger == 0) break;
+            }else if(trigger == 0)
+            {
+                menu(); break;
+            }
         }
     case 3:
         {
@@ -63,7 +69,10 @@ void menu(void)
             }else if(trigger == 3)
             {
                 menu(); break;
-            }else if(trigger == 0) break;
+            }else if(trigger == 0)
+            {
+                menu(); break;
+            }
         }
     case 4:
         {
@@ -78,10 +87,14 @@ void menu(void)
             }else if(trigger == 3)
             {
                 menu(); break;
-            }else if(trigger == 0) break;
+            }else if(trigger == 0)
+            {
+                menu(); break;
+            }
         }
     case 0:
         {
+            printf("\n\n");
             printf("%20c# ", ' '); system("pause");
             system("cls");
             printf("\n\n\n\n\n\n");
@@ -354,8 +367,8 @@ int playstation(void)
 {
     int i, k, l, choice, price = 1250, check;
     char code[SIZE], line[SIZE];
-    FILE *playstation5;
-    playstation5 = fopen("playstation5.txt", "r+");
+    FILE *playstation10;
+    playstation10 = fopen("playstation10.txt", "r+");
     FILE *inI;
     inI = fopen("playstation_i.txt", "r");
     fscanf(inI, "%d", &i);
@@ -375,7 +388,7 @@ int playstation(void)
     if(i == 0)
     {
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
-        fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation5);
+        fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation10);
         printf("\n\n%20c# SORRY, WE'VE RUN OUT OF PLAYSTATION $10 GIFT CARDS\n", ' '); sleep(1);
         printf("%20c# PRESS ANY KEY TO CONTINUE TO MAIN MENU> \n", ' '); getch(); system("cls");
         return 0;
@@ -386,7 +399,7 @@ int playstation(void)
         if(check == 1)
         {
             l = 0;
-            fgets(line, SIZE, playstation5);
+            fgets(line, SIZE, playstation10);
             for(k; k>= 0; ++k)
             {
                 code[l] = line[k];
@@ -400,7 +413,7 @@ int playstation(void)
             fprintf(outK, "%d", k);
             --i;
             fprintf(outI, "%d", i);
-            fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation5);
+            fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation10);
             printf("\n\n\n\n");
             printf("%20c*******************************************************************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
@@ -418,19 +431,19 @@ int playstation(void)
         else if(check == 3)
         {
             fprintf(outI, "%d", i); fprintf(outK, "%d", k);
-            fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation5); return 2;
+            fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation10); return 2;
         }
         else if(check == 0)
         {
             fprintf(outI, "%d", i); fprintf(outK, "%d", k);
-            fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation5); return 0;
+            fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation10); return 0;
         }
     }
     else
     {
         system("cls");
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
-        fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation5);
+        fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation10);
         printf("%20c# PLEASE PRESS 1 TO BUY THE PRODUCT\n", ' '); sleep(2); system("cls"); return 2;
     }
 }
@@ -443,18 +456,18 @@ int payment(int n)
     printf("%40c**********************************\n", ' ');
     printf("\n\n\n\n\n\n");
     printf("%20c# PLEASE SELECT YOUR PAYMENT METHOD> ", ' ');
-    printf("\n\n%20c  1. Bkash", ' ');
-    printf("\n%20c  2. Nagad", ' ');
-    printf("\n%20c  3. Credit Card", ' ');
+    printf("\n\n%20c1. Bkash", ' ');
+    printf("\n%20c2. Nagad", ' ');
+    printf("\n%20c3. Credit Card", ' ');
     printf("\n%20c# PRESS 0 TO GO TO MAIN MENU", ' ');
-    printf("\n\n%20c  >> ", ' '); scanf("%d", &option);
+    printf("\n\n%20c>> ", ' '); scanf("%d", &option);
     printf("\n");
     switch(option)
     {
     case 1:
         {
-            printf("%20c# PLEASE PAY %dBDT (VAT INCLUDED)\n", ' ', n+14);
-            printf("%20c  1. Pay\n", ' '); printf("%20c  2. Return to payment menu\n", ' '); printf("%20c# OR PRESS 0 TO GO TO MAIN MENU\n", ' '); printf("%20c  >> ", ' '); scanf("%d", &pay_not);
+            printf("\n%20c# PLEASE PAY %dBDT (VAT INCLUDED)\n", ' ', n+14);
+            printf("%20c1. Pay\n", ' '); printf("%20c2. Return to payment menu\n", ' '); printf("\n%20c# OR PRESS 0 TO GO TO MAIN MENU\n", ' '); printf("\n%20c>> ", ' '); scanf("%d", &pay_not);
             printf("\n");
             if(pay_not == 1)
             {
