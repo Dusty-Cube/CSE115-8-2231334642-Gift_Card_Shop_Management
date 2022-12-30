@@ -5,13 +5,18 @@ void menu(void)
     int choice, trigger;
 
     system("cls");
-    printf("Select the card you wanna purchase -\n");
-    printf("\n1. Google Play");
-    printf("\n2. Amazon");
-    printf("\n3. Apple Gift Card");
-    printf("\n4. PlayStation");
-    printf("\nPRESS 0 TO EXIT");
-    printf("\n\n>> "); scanf("%d", &choice);
+    printf("\n\n\n\n\n\n");
+    printf("%40c**********************************\n", ' ');
+    printf("%40c*******        MENU        *******\n", ' ');
+    printf("%40c**********************************\n", ' ');
+    printf("\n\n\n\n\n\n");
+    printf("%20c# SELECT THE CARD YOU WANNA PURCHASE> \n\n\n", ' ');
+    printf("\n%20c  1. Google Play", ' ');
+    printf("\n%20c  2. Amazon", ' ');
+    printf("\n%20c  3. Apple Gift Card", ' ');
+    printf("\n%20c  4. PlayStation", ' ');
+    printf("\n%20c  PRESS 0 TO EXIT", ' ');
+    printf("\n\n%20c  >> ", ' '); scanf("%d", &choice);
 
     switch(choice)
     {
@@ -77,17 +82,18 @@ void menu(void)
         }
     case 0:
         {
+            printf("%20c# ", ' '); system("pause");
             system("cls");
             printf("\n\n\n\n\n\n");
-            printf("%20c*********************************\n", ' ');
-            printf("%20c*        Have a good day.       *\n", ' ');
-            printf("%20c*********************************\n", ' ');
+            printf("%20c**********************************\n", ' ');
+            printf("%20c**        HAVE A GOOD DAY       **\n", ' ');
+            printf("%20c**********************************\n", ' ');
             printf("\n\n\n\n\n\n");
             break;
         }
     default:
         {
-            printf("Please select the available options.\n"); sleep(2); system("cls");
+            printf("%20c# PLEASE SELECT THE AVAILABLE OPTIONS\n", ' '); sleep(2); system("cls");
             menu();
         }
     }
@@ -113,13 +119,13 @@ int googlePlay(void)
     printf("%20c Serial %10c Value %10c Price(BDT) %10c In-stock\n\n", ' ', ' ', ' ', ' ');
     printf("%22c 1. %13c $5 %15c %d %17c %d\n", ' ', ' ',  ' ', price, ' ', i);
 
-    printf("\n\n\n\nPress 1 to buy $5 google play gift card> "); scanf("%d", &choice);
+    printf("\n\n\n\n%20c# PRESS 1 TO BUY $5 GOOGLE PLAY GIFT CARD> ", ' '); scanf("%d", &choice);
     if(i == 0)
     {
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(googleplay5);
-        printf("\n\nSorry, we've run out of Google Play $5 gift cards.\n"); sleep(1);
-        printf("Press any key to continue to main menu> \n"); getch(); system("cls");
+        printf("\n\n%20c# SORRY, WE'VE RUN OUT OF GOOGLE PLAY $5 GIFT CARDS\n", ' '); sleep(1);
+        printf("%20c# PRESS ANY KEY TO CONTINUE TO MAIN MENU> \n", ' '); getch(); system("cls");
         return 3;
     }
     if(choice == 1)
@@ -153,9 +159,9 @@ int googlePlay(void)
             printf("%20c*******       PLEASE WRITE DOWN THE CODE SOMEWHERE    *************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
-            printf("\n\nPress any key to continue."); getch();
-            printf("\n\nMake sure to write down the code.\n"); sleep(1);
-            printf("Press any key> "); getch(); return 1;
+            printf("\n\n%20c# PRESS ANY KEY TO CONTINUE", ' '); getch();
+            printf("\n\n%20c# Make sure to write down the code.\n", ' '); sleep(1);
+            printf("%20c# PRESS ANY KEY> ", ' '); getch(); return 1;
         }
         else if(check == 3)
         {
@@ -173,7 +179,7 @@ int googlePlay(void)
         system("cls");
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(googleplay5);
-        printf("Please press 1 to buy the product.\n"); sleep(2); system("cls"); return 2;
+        printf("%20c# PLEASE PRESS 1 TO BUY THE PRODUCT.\n", ' '); sleep(2); system("cls"); return 2;
     }
 }
 int amazon(void)
@@ -197,13 +203,13 @@ int amazon(void)
     printf("%20c Serial %10c Value %10c Price(BDT) %10c In-stock\n\n", ' ', ' ', ' ', ' ');
     printf("%22c 1. %13c $5 %15c %d %17c %d\n", ' ', ' ',  ' ', price, ' ', i);
 
-    printf("\n\n\n\nPress 1 to buy $5 Amazon gift card> "); scanf("%d", &choice);
+    printf("\n\n\n\n%20c# PRESS 1 TO BUY $5 AMAZON GIFT CARD> ", ' '); scanf("%d", &choice);
     if(i == 0)
     {
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(amazon5);
-        printf("\n\nSorry, we've run out of Amazon $5 gift cards.\n"); sleep(1);
-        printf("Press any key to continue to main menu> \n"); getch(); system("cls");
+        printf("\n\n%20c# SORRY, WE'VE RUN OUT OF AMAZON $5 GIFT CARDS\n", ' '); sleep(1);
+        printf("%20c# PRESS ANY KEY TO CONTINUE TO MAIN MENU> \n", ' '); getch(); system("cls");
         return 0;
     }
     if(choice == 1)
@@ -237,9 +243,9 @@ int amazon(void)
             printf("%20c*******       PLEASE WRITE DOWN THE CODE SOMEWHERE    *************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
-            printf("\n\nPress any key to continue."); getch();
-            printf("\n\nMake sure to write down the code.\n"); sleep(1);
-            printf("Press any key> "); getch(); return 1;
+            printf("\n\n%20c# PRESS ANY KEY TO CONTINUE", ' '); getch();
+            printf("\n\n%20c# MAKE SURE TO WRITE DOWN THE CODE\n", ' '); sleep(1);
+            printf("%20c# Press any key> ", ' '); getch(); return 1;
         }
         else if(check == 3)
         {
@@ -257,7 +263,7 @@ int amazon(void)
         system("cls");
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(amazon5);
-        printf("Please press 1 to buy the product.\n"); sleep(2); system("cls"); return 2;
+        printf("%20c# PLEASE PRESS 1 TO BUY THE PRODUCT\n", ' '); sleep(2); system("cls"); return 2;
     }
 }
 int apple(void)
@@ -281,13 +287,13 @@ int apple(void)
     printf("%20c Serial %10c Value %10c Price(BDT) %10c In-stock\n\n", ' ', ' ', ' ', ' ');
     printf("%22c 1. %13c $10 %15c %d %17c %d\n", ' ', ' ',  ' ', price, ' ', i);
 
-    printf("\n\n\n\nPress 1 to buy $10 Apple gift card> "); scanf("%d", &choice);
+    printf("\n\n\n\n%20c# PRESS 1 TO BUY $10 APPLE GIFT CARD> ", ' '); scanf("%d", &choice);
     if(i == 0)
     {
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(apple10);
-        printf("\n\nSorry, we've run out of Apple $10 gift cards.\n"); sleep(1);
-        printf("Press any key to continue to main menu> \n"); getch(); system("cls");
+        printf("\n\n%20c# SORRY, WE'VE RUN OUT OF APPLE $10 GIFT CARDS\n", ' '); sleep(1);
+        printf("%20c# PRESS ANY KEY TO CONTINUE TO MAIN MENU> \n", ' '); getch(); system("cls");
         return 0;
     }
     if(choice == 1)
@@ -321,9 +327,9 @@ int apple(void)
             printf("%20c*******       PLEASE WRITE DOWN THE CODE SOMEWHERE    *************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
-            printf("\n\nPress any key to continue."); getch();
-            printf("\n\nMake sure to write down the code.\n"); sleep(1);
-            printf("Press any key> "); getch(); return 1;
+            printf("\n\n%20c# PRESS ANY KEY TO CONTINUE", ' '); getch();
+            printf("\n\n%20c# MAKE SURE TO WRITE DOWN THE CODE\n", ' '); sleep(1);
+            printf("%20c# PRESS ANY KEY> ", ' '); getch(); return 1;
         }
         else if(check == 3)
         {
@@ -341,7 +347,7 @@ int apple(void)
         system("cls");
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(apple10);
-        printf("Please press 1 to buy the product.\n"); sleep(2); system("cls"); return 2;
+        printf("%20c# PLEASE PRESS 1 TO BUY THE PRODUCT\n", ' '); sleep(2); system("cls"); return 2;
     }
 }
 int playstation(void)
@@ -365,13 +371,13 @@ int playstation(void)
     printf("%20c Serial %10c Value %10c Price(BDT) %10c In-stock\n\n", ' ', ' ', ' ', ' ');
     printf("%22c 1. %13c $10 %15c %d %17c %d\n", ' ', ' ',  ' ', price, ' ', i);
 
-    printf("\n\n\n\nPress 1 to buy $5 PlayStation gift card> "); scanf("%d", &choice);
+    printf("\n\n\n\n%20c# PRESS 1 TO BUY $5 PLAYSTATION GIFT CARD> ", ' '); scanf("%d", &choice);
     if(i == 0)
     {
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation5);
-        printf("\n\nSorry, we've run out of PlayStation $5 gift cards.\n"); sleep(1);
-        printf("Press any key to continue to main menu> \n"); getch(); system("cls");
+        printf("\n\n%20c# SORRY, WE'VE RUN OUT OF PLAYSTATION $10 GIFT CARDS\n", ' '); sleep(1);
+        printf("%20c# PRESS ANY KEY TO CONTINUE TO MAIN MENU> \n", ' '); getch(); system("cls");
         return 0;
     }
     if(choice == 1)
@@ -405,9 +411,9 @@ int playstation(void)
             printf("%20c*******       PLEASE WRITE DOWN THE CODE SOMEWHERE    *************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
             printf("%20c*******************************************************************\n", ' ');
-            printf("\n\nPress any key to continue."); getch();
-            printf("\n\nMake sure to write down the code.\n"); sleep(1);
-            printf("Press any key> "); getch(); return 1;
+            printf("\n\n%20c# PRESS ANY KEY TO CONTINUE", ' '); getch();
+            printf("\n\n%20c# MAKE SURE TO WRITE DOWN THE CODE\n", ' '); sleep(1);
+            printf("%20c# PRESS ANY KEY> ", ' '); getch(); return 1;
         }
         else if(check == 3)
         {
@@ -425,29 +431,34 @@ int playstation(void)
         system("cls");
         fprintf(outI, "%d", i); fprintf(outK, "%d", k);
         fclose(inI); fclose(inK); fclose(outI); fclose(outK); fclose(playstation5);
-        printf("Please press 1 to buy the product.\n"); sleep(2); system("cls"); return 2;
+        printf("%20c# PLEASE PRESS 1 TO BUY THE PRODUCT\n", ' '); sleep(2); system("cls"); return 2;
     }
 }
 int payment(int n)
 {
     int option, pay_not, trigger, i;
-    printf("Please select your payment method -");
-    printf("\n\n1. Bkash");
-    printf("\n2. Nagad");
-    printf("\n3. Credit Card");
-    printf("\nPRESS 0 TO GO TO MAIN MENU");
-    printf("\n\n>> "); scanf("%d", &option);
+    printf("\n\n\n\n\n\n");
+    printf("%40c**********************************\n", ' ');
+    printf("%40c**        PAYMENT METHODS       **\n", ' ');
+    printf("%40c**********************************\n", ' ');
+    printf("\n\n\n\n\n\n");
+    printf("%20c# PLEASE SELECT YOUR PAYMENT METHOD> ", ' ');
+    printf("\n\n%20c  1. Bkash", ' ');
+    printf("\n%20c  2. Nagad", ' ');
+    printf("\n%20c  3. Credit Card", ' ');
+    printf("\n%20c# PRESS 0 TO GO TO MAIN MENU", ' ');
+    printf("\n\n%20c  >> ", ' '); scanf("%d", &option);
     printf("\n");
     switch(option)
     {
     case 1:
         {
-            printf("Please pay %dBDT (vat included)\n", n+14);
-            printf("1. Pay\n"); printf("2. Return to payment menu\n"); printf("OR PRESS 0 TO GO TO MAIN MENU\n"); printf(">> "); scanf("%d", &pay_not);
+            printf("%20c# PLEASE PAY %dBDT (VAT INCLUDED)\n", ' ', n+14);
+            printf("%20c  1. Pay\n", ' '); printf("%20c  2. Return to payment menu\n", ' '); printf("%20c# OR PRESS 0 TO GO TO MAIN MENU\n", ' '); printf("%20c  >> ", ' '); scanf("%d", &pay_not);
             printf("\n");
             if(pay_not == 1)
             {
-                printf("Please wait a moment..."); sleep(2); printf("\nPayment completed successfully.\n"); system("cls"); return 1;
+                printf("%20c# Please wait a moment...", ' '); sleep(2); printf(" Payment completed successfully :)\n"); sleep(2); system("cls"); return 1;
             }
             else if(pay_not == 2)
             {
@@ -463,17 +474,17 @@ int payment(int n)
             else if(pay_not == 0) return 3;
             else
             {
-                printf("Please select one of the options shown.\n"); sleep(2); payment(n);
+                printf("%20c# PLEASE SELECT ONE OF THE OPTIONS SHOWN\n", ' '); sleep(2); payment(n);
             }
         }
     case 2:
         {
-            printf("Please pay %dBDT (vat included)\n", n+10);
-            printf("1. Pay\n"); printf("2. Return to payment menu\n"); printf("OR PRESS 0 TO GO TO MAIN MENU\n"); printf(">> "); scanf("%d", &pay_not);
+            printf("%20c# PLEASE PAY %dBDT (VAT INCLUDED)\n", ' ', n+10);
+            printf("%20c  1. Pay\n", ' '); printf("%20c  2. Return to payment menu\n", ' '); printf("%20c# OR PRESS 0 TO GO TO MAIN MENU\n", ' '); printf("%20c  >> ", ' '); scanf("%d", &pay_not);
             printf("\n");
             if(pay_not == 1)
             {
-                printf("Please wait a moment..."); sleep(2); printf("\nPayment completed successfully.\n"); system("cls"); return 1;
+                printf("%20c# Please wait a moment...", ' '); sleep(2); printf(" Payment completed successfully :)\n"); sleep(2); system("cls"); return 1;
             }
             else if(pay_not == 2)
             {
@@ -489,17 +500,17 @@ int payment(int n)
             else if(pay_not == 0) return 3;
             else
             {
-                printf("Please select one of the options shown.\n"); sleep(2); payment(n);
+                printf("%20c# PLEASE SELECT ONE OF THE OPTIONS SHOWN\n", ' '); sleep(2); payment(n);
             }
         }
     case 3:
         {
-            printf("Please pay %dBDT (vat included)\n", n+25);
-            printf("1. Pay\n"); printf("2. Return to payment menu\n"); printf("OR PRESS 0 TO GO TO MAIN MENU\n"); printf(">> "); scanf("%d", &pay_not);
+            printf("%20c# PLEASE PAY %dBDT (VAT INCLUDED)\n", ' ', n+25);
+            printf("%20c  1. Pay\n", ' '); printf("%20c  2. Return to payment menu\n", ' '); printf("%20c# OR PRESS 0 TO GO TO MAIN MENU\n", ' '); printf("%20c  >> ", ' '); scanf("%d", &pay_not);
             printf("\n");
             if(pay_not == 1)
             {
-                printf("Please wait a moment..."); sleep(2); printf("\nPayment completed successfully.\n"); system("cls"); return 1;
+                printf("%20c# Please wait a moment...", ' '); sleep(2); printf("Payment completed successfully :)\n"); sleep(2); system("cls"); return 1;
             }
             else if(pay_not == 2)
             {
@@ -515,17 +526,17 @@ int payment(int n)
             else if(pay_not == 0) return 3;
             else
             {
-                printf("Please select one of the options shown.\n"); sleep(2); payment(n);
+                printf("%20c# PLEASE SELECT ONE OF THE OPTIONS SHOWN\n", ' '); sleep(2); payment(n);
             }
         }
     case 0:
         {
             system("cls"); sleep(1);
-            return 0;
+            return 3;
         }
     default:
         {
-            printf("Please select one of the payment methods. Or PRESS 0 TO GO TO MAIN MENU"); sleep(2);
+            printf("%20c# PLEASE SELECT ONE OF THE PAYMENT METHODS OR PRESS 0 TO GO TO MAIN MENU", ' '); sleep(2);
             system("cls");
             payment(n);
         }

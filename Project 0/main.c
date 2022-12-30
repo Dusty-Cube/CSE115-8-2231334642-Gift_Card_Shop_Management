@@ -1,110 +1,179 @@
 #include <stdio.h>
 #include <string.h>
 #include <dos.h>
-#include "SplashScreen.h"
+#include <windows.h>
+#include <MMsystem.h>
+//#include "SplashScreen.h"
 #include "Login.h"
 #include "Menu.h"
 
 int main(void)
 {
+    PlaySound(TEXT("song.wav"), NULL, SND_LOOP | SND_ASYNC);
     int option, check, trigger, i, choice = 1;
-    splash();
-
-    printf("Hello, User.\n"); sleep(1);
-    printf("Welcome to Nasim's Gift Card Shop."); sleep(1);
-    printf("\n\nWhat would you like to do?"); sleep(1);
-    printf("\n1. Create an account");
-    printf("\n2. Login");
-    printf("\n3. Exit");
-    printf("\n\n> "); scanf("%d", &option);
-
+    //splash();
+    printf("\n\n\n\n\n\n");
+    printf("%20c# HELLO, USER\n", ' '); sleep(1);
+    printf("%20c# WELCOME TO NASIM'S GIFT CARD SHOP\n", ' '); sleep(2); system("cls");
+    printf("\n\n\n\n\n\n");
+    printf("%20c# WHAT WOULD YOU LIKE TO DO> ", ' '); sleep(1);
+    printf("\n\n%20c  1. Create an Account", ' ');
+    printf("\n%20c  2. Login", ' ');
+    printf("\n%20c  3. Exit", ' ');
+    printf("\n\n%20c  >> ", ' '); scanf("%d", &option);
     if(option == 1)
     {
         trigger = login(1);
-        if(trigger == 2)
-        {
-            trigger = login(2);
-            if(trigger == 5) menu();
-        }
-    }
-
-    if(option == 2)
-    {
         trigger = login(2);
-        if(trigger == 1)
+        if(trigger == 5) menu();
+        else if(trigger == 1)
         {
             trigger = login(1);
-            if(trigger == 2)
-            {
-                trigger = login(2);
-                if(trigger == 0)
-                {
-                    trigger = login(2);
-                }
-                if(trigger == 5) menu();
-            }
-            printf("\n\nYou failed to log in.\nPlease restart the program.\n");
-        }else if(trigger == 5) menu();
-        else if(trigger == 0)
-        {
             trigger = login(2);
-            if(trigger == 5)
+            if(trigger == 1)
             {
-                menu();
+                printf("\n\n%20c# You have made multiple mistakes while logging in.", ' '); sleep(1);
+                printf("\n%20c# PLEASE RESTART THE PROGRAM\n", ' ');
             }
-            else if(trigger == 1)
-            {
-                trigger = login(1);
-                if(trigger == 2)
-                {
-                    trigger = login(2);
-                    if(trigger == 0)
-                    {
-                        trigger = login(2);
-                    }
-                    if(trigger == 5) menu();
-                }
-            }
-            else
+            else if(trigger == 0)
             {
                 while(choice == 1)
                 {
-                    printf("\n\nInvalid Password\n");
-                    printf("Press 1 to try again OR Press 0 to exit> "); scanf("%d", &choice);
+                    printf("\n\n%20c# Invalid Password\n", ' ');
+                    printf("%20c# PRESS 1 TO TRY AGAIN OR PRESS 0 TO EXIT> ", ' '); scanf("%d", &choice);
                     if(choice == 1)
                     {
                         trigger = login(2);
-                        if(trigger == 5)
-                        {
-                            menu();
-                            break;
-                        }
+                        if(trigger == 5) menu();
                     }
-                    if(choice != 1)
+                    else if(choice != 1)
                     {
+                        printf("%20c# ", ' '); system("pause");
                         system("cls"); sleep(1);
                         printf("\n\n\n\n\n\n");
-                        printf("%20c*********************************\n", ' ');
-                        printf("%20c*        Have a good day.       *\n", ' ');
-                        printf("%20c*********************************\n", ' ');
+                        printf("%20c**********************************\n", ' ');
+                        printf("%20c**        HAVE A GOOD DAY       **\n", ' ');
+                        printf("%20c**********************************\n", ' ');
                         printf("\n\n\n\n\n\n");
                         break;
                     }
                 }
             }
         }
+        else if(trigger == 0)
+        {
+            while(choice == 1)
+            {
+                printf("\n\n%20c# Invalid Password\n", ' ');
+                printf("%20c# PRESS 1 TO TRY AGAIN OR PRESS 0 TO EXIT> ", ' '); scanf("%d", &choice);
+                if(choice == 1)
+                {
+                    trigger = login(2);
+                    if(trigger == 5) menu();
+                }
+                else if(choice != 1)
+                {
+                    printf("%20c# ", ' '); system("pause");
+                    system("cls"); sleep(1);
+                    printf("\n\n\n\n\n\n");
+                    printf("%20c**********************************\n", ' ');
+                    printf("%20c**        HAVE A GOOD DAY       **\n", ' ');
+                    printf("%20c**********************************\n", ' ');
+                    printf("\n\n\n\n\n\n");
+                    break;
+                }
+            }
+        }
     }
-
-    if(option != 1 || option != 2)
+    else if(option == 2)
     {
+        trigger = login(2);
+        if(trigger == 5) menu();
+        else if(trigger == 1)
+        {
+            trigger = login(1);
+            trigger = login(2);
+            if(trigger == 1)
+            {
+                printf("%20c# ", ' '); system("pause"); system("cls");
+                printf("\n\n%20c# You have made multiple mistakes while logging in.\n", ' '); sleep(1);
+                printf("%20c# PLEASE RESTART THE PROGRAM\n", ' ');
+            }
+            else if(trigger == 0)
+            {
+                while(choice == 1)
+                {
+                    system("cls");
+                    printf("\n\n\n\n\n\n");
+                    printf("%40c*********************************\n", ' ');
+                    printf("%40c**            LOGIN            **\n", ' ');
+                    printf("%40c*********************************\n", ' ');
+                    printf("\n\n\n\n\n\n");
+                    printf("\n\n%20c# Invalid Password\n", ' ');
+                    printf("%20c# PRESS 1 TO TRY AGAIN OR PRESS 0 TO EXIT> ", ' '); scanf("%d", &choice);
+                    if(choice == 1)
+                    {
+                        trigger = login(2);
+                        if(trigger == 5) menu();
+                    }
+                    else if(choice != 1)
+                    {
+                        printf("%20c# ", ' '); system("pause");
+                        system("cls"); sleep(1);
+                        printf("\n\n\n\n\n\n");
+                        printf("%20c**********************************\n", ' ');
+                        printf("%20c**        HAVE A GOOD DAY       **\n", ' ');
+                        printf("%20c**********************************\n", ' ');
+                        printf("\n\n\n\n\n\n");
+                        break;
+                    }
+                }
+            }
+            else if(trigger == 5)
+            {
+                system("cls"); menu();
+            }
+        }
+        else if(trigger == 0)
+        {
+            while(choice == 1)
+            {
+                system("cls");
+                printf("\n\n\n\n\n\n");
+                printf("%40c*********************************\n", ' ');
+                printf("%40c**            LOGIN            **\n", ' ');
+                printf("%40c*********************************\n", ' ');
+                printf("\n\n\n\n\n\n");
+                printf("\n\n%20c# Invalid Password\n", ' ');
+                printf("%20c# PRESS 1 TO TRY AGAIN OR PRESS 0 TO EXIT> ", ' '); scanf("%d", &choice);
+                if(choice == 1)
+                {
+                    trigger = login(2);
+                    if(trigger == 5) menu();
+                }
+                else if(choice != 1)
+                {
+                    printf("%20c# ", ' '); system("pause");
+                    system("cls"); sleep(1);
+                    printf("\n\n\n\n\n\n");
+                    printf("%20c**********************************\n", ' ');
+                    printf("%20c**        HAVE A GOOD DAY       **\n", ' ');
+                    printf("%20c**********************************\n", ' ');
+                    printf("\n\n\n\n\n\n");
+                    break;
+                }
+            }
+        }
+    }
+    else if(trigger != 1 || trigger != 2)
+    {
+        printf("%20c# ", ' '); system("pause");
         system("cls"); sleep(1);
         printf("\n\n\n\n\n\n");
-        printf("%20c*********************************\n", ' ');
-        printf("%20c*        Have a good day.       *\n", ' ');
-        printf("%20c*********************************\n", ' ');
+        printf("%20c**********************************\n", ' ');
+        printf("%20c**        HAVE A GOOD DAY       **\n", ' ');
+        printf("%20c**********************************\n", ' ');
         printf("\n\n\n\n\n\n");
     }
-
     return 0;
 }
-
