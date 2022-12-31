@@ -12,6 +12,7 @@ int main(void)
     PlaySound(TEXT("song.wav"), NULL, SND_LOOP | SND_ASYNC);
     int option, check, trigger, i, choice = 1;
     splash();
+    system("cls");
     printf("\n\n\n\n\n\n");
     printf("%20c# HELLO, USER\n", ' '); sleep(1);
     printf("%20c# WELCOME TO NASIM'S GIFT CARD SHOP\n", ' '); sleep(2);
