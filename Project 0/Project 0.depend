@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1672490608 source:d:\c projects\github\cse115 project\cse115-8-2231334642-gift_card_shop_management\project 0\main.c
+	<stdio.h>
+	<string.h>
+	<dos.h>
+	<windows.h>
+	<MMsystem.h>
+	"SplashScreen.h"
+	"Login.h"
+	"Menu.h"
+
+1672336567 d:\c projects\github\cse115 project\cse115-8-2231334642-gift_card_shop_management\project 0\splashscreen.h
+
+1672490598 d:\c projects\github\cse115 project\cse115-8-2231334642-gift_card_shop_management\project 0\login.h
+
+1672493325 d:\c projects\github\cse115 project\cse115-8-2231334642-gift_card_shop_management\project 0\menu.h
+
